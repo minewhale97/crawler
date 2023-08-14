@@ -1,0 +1,46 @@
+server:
+  port: 8080
+#management:
+#  server:
+#    port: 8081
+#  endpoints:
+#    jmx:
+#      exposure:
+#        include: *
+#    web:
+#      exposure:
+#        include: *
+#    health:
+#      show-details: always
+spring:
+#  thymeleaf:
+#    cache: true
+#    check-template: true
+#    check-template-location: true
+#    content-type: text/html
+#    enabled: true
+#    encoding: UTF-8
+#    excluded-view-names:
+#    mode: HTML5
+#    prefix: classpath:/templates/
+#    suffix: .html
+  mail:
+    host: smtp.163.com
+    port: 465
+    username: minewhale@163.com
+    password: DMRAMQUICBWXCCRY
+    protocol: smtp
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+          auth: true
+          starttls:
+            enable: true
+            required: true
+#      mail.enable: true
+#      mail.smtp.socketFactory.port: 465
+#      mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory
+#      mail.smtp.socketFactory.fallback: false
