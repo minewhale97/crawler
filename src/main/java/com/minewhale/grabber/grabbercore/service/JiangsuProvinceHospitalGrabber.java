@@ -1,6 +1,6 @@
 package com.minewhale.grabber.grabbercore.service;
 
-import com.minewhale.grabber.grabbercore.demos.web.external.MailService;
+import com.minewhale.grabber.grabbercore.service.external.MailService;
 import com.minewhale.grabber.grabbercore.utils.DateUtils;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
