@@ -194,4 +194,32 @@ public class EmailUtils extends ApplicationObjectSupport {
         return 1;
     }
 
+    public static void sendHtmlMailOne(String to, String subject, String content) {
+        try {
+            MimeMessage message = javaMailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true);
+            helper.setTo(to);//收件者
+            helper.setFrom(from);//发送者
+            helper.setSubject(subject);//主题
+            helper.setText(content, true);//第二个参数true表示邮件正文是HTML格式的，该参数不传默认为false。
+            javaMailSender.send(message);
+        } catch (MessagingException e) {
+            System.out.println("发送失败");
+        }
+    }
+
+    public static void sendHtmlMailMulti(String[] to, String subject, String content) {
+        try {
+            MimeMessage message = javaMailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true);
+            helper.setTo(to);//收件者
+            helper.setFrom(from);//发送者
+            helper.setSubject(subject);//主题
+            helper.setText(content, true);//第二个参数true表示邮件正文是HTML格式的，该参数不传默认为false。
+            javaMailSender.send(message);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
