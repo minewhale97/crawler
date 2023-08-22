@@ -5,8 +5,24 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class GrabberResult {
+public class GrabberResult <T> {
+    /**
+     * 站点名称
+     */
+    private String siteName;
+
+    /**
+     * 类目
+     */
     private String category;
 
-    private List<GrabberElement> elements;
+    /**
+     * 链接
+     */
+    private String categoryUrl;
+
+    /**
+     * 元素
+     */
+    private List<T> elements;
 }
