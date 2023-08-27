@@ -1,4 +1,4 @@
-package com.minewhale.grabber.grabbercore.web.controller;
+package com.minewhale.grabber.grabbercore.controller.web.web.controller;
 
 import com.minewhale.grabber.grabbercore.service.external.EmailUtils;
 import com.minewhale.grabber.grabbercore.service.external.GetCode;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.minewhale.grabber.grabbercore.demos.web;
+package com.minewhale.grabber.grabbercore.controller.web;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>

@@ -17,23 +17,19 @@
  * 
  * =============================================================================
  */
-package com.minewhale.grabber.grabbercore.web.controller;
+package com.minewhale.grabber.grabbercore.controller.web.web.controller;
 
-
-import com.minewhale.grabber.grabbercore.business.entities.Product;
-import com.minewhale.grabber.grabbercore.business.services.ProductService;
 import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.context.WebContext;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
-public class ProductListController implements IGTVGController {
+public class SubscribeController implements IGTVGController {
 
     
-    public ProductListController() {
+    public SubscribeController() {
         super();
     }
     
@@ -43,13 +39,8 @@ public class ProductListController implements IGTVGController {
             final ServletContext servletContext, final ITemplateEngine templateEngine)
             throws Exception {
         
-        final ProductService productService = new ProductService();
-        final List<Product> allProducts = productService.findAll();
-        
-        final WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
-        ctx.setVariable("prods", allProducts);
-        
-        templateEngine.process("product/list", ctx, response.getWriter());
+        WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
+        templateEngine.process("subscribe", ctx, response.getWriter());
         
     }
 

@@ -159,6 +159,8 @@ public class EmailUtils extends ApplicationObjectSupport {
         return sendThymeleafMail(map, null, toMails);
     }
 
+
+
     /**
      * 发送 thymeleaf 页面邮件 - 最终执行
      *

@@ -32,28 +32,33 @@
                         </font>
                     </h2>
                     <!-- 中文 -->
-                    <p >您好！感谢您使用minewhale-grabber，请注意以下最新爬虫提示：<font color="#ff8c00"><!--/*@thymesVar id="recipientType" type="java"*/--></font></p>
+                    <p >您好！感谢您使用minewhale-grabber，请注意以下今日最新爬虫提示：<font color="#ff8c00"><!--/*@thymesVar id="recipientType" type="java"*/--></font></p>
 
 
-                    <div th:object="${bodyEntity}">
-                        <p th:text="*{recipientType}"></p>
-                        <p th:text="*{address}"></p>
-                    </div>
+<!--                    <div th:object="${bodyEntity}">-->
+<!--                        <p th:text="*{recipientType}"></p>-->
+<!--                        <p th:text="*{address}"></p>-->
+<!--                    </div>-->
 
-                    <p th:text="${code}"></p>
-                    </font>，有效期30分钟，请尽快填写验证码完成验证！</p><br>
+                    <table border="1">
+                        <tr>
+                            <th>站点</th>
+                            <th>链接</th>
+                            <th>内容</th>
+                        </tr>
+                        <tr th:each="grabberResult:${grabberResults}">
+                            <td><span th:text="${grabberResult.siteName}"/></td>
+                            <td><a th:href="${grabberResult.categoryUrl}"><span th:text="${grabberResult.category}"/></a></td>
+                            <td >
+                                <ul>
+                                    <li th:each="element : ${grabberResult.elements}">
+                                        <a th:href="${element.link}"><span th:text="${element.title}"/></a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
 
-                    <div style="width:100%;margin:0 auto;">
-                        <div style="padding:10px 10px 0;border-top:1px solid #ccc;color:#747474;margin-bottom:20px;line-height:1.3em;font-size:12px;">
-                            <p>****团队</p>
-                            <p>联系我们：********</p>
-                            <br>
-                            <p>此为系统邮件，请勿回复<br>
-                                Please do not reply to this system email
-                            </p>
-                            <!--<p>©***</p>-->
-                        </div>
-                    </div>
                 </div>
             </td>
         </tr>

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @ComponentScan(basePackages = {"com.minewhale"})
-@ServletComponentScan(basePackages = "com.minewhale.grabber.grabbercore.web.filter")
+@ServletComponentScan(basePackages = "com.minewhale.grabber.grabbercore.web")
 public class GrabberCoreApplication {
 
     public static void main(String[] args) {

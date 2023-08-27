@@ -17,7 +17,8 @@
  * 
  * =============================================================================
  */
-package com.minewhale.grabber.grabbercore.web.controller;
+package com.minewhale.grabber.grabbercore.controller.web.web.controller;
+
 
 import com.minewhale.grabber.grabbercore.business.entities.Product;
 import com.minewhale.grabber.grabbercore.business.services.ProductService;
@@ -27,11 +28,12 @@ import org.thymeleaf.context.WebContext;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
-public class ProductCommentsController implements IGTVGController {
+public class ProductListController implements IGTVGController {
 
     
-    public ProductCommentsController() {
+    public ProductListController() {
         super();
     }
     
@@ -41,15 +43,13 @@ public class ProductCommentsController implements IGTVGController {
             final ServletContext servletContext, final ITemplateEngine templateEngine)
             throws Exception {
         
-        final Integer prodId = Integer.valueOf(request.getParameter("prodId"));
-        
         final ProductService productService = new ProductService();
-        final Product product = productService.findById(prodId);
+        final List<Product> allProducts = productService.findAll();
         
         final WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
-        ctx.setVariable("prod", product);
+        ctx.setVariable("prods", allProducts);
         
-        templateEngine.process("product/comments", ctx, response.getWriter());
+        templateEngine.process("product/list", ctx, response.getWriter());
         
     }
 

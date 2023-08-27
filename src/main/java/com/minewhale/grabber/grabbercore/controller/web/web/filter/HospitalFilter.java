@@ -17,31 +17,32 @@
  *
  * =============================================================================
  */
-package com.minewhale.grabber.grabbercore.web.filter;
+package com.minewhale.grabber.grabbercore.controller.web.web.filter;
 
 import com.minewhale.grabber.grabbercore.business.entities.User;
-import com.minewhale.grabber.grabbercore.web.application.GTVGApplication;
-import com.minewhale.grabber.grabbercore.web.controller.IGTVGController;
-import org.springframework.core.annotation.Order;
+import com.minewhale.grabber.grabbercore.controller.web.web.application.GTVGApplication;
+import com.minewhale.grabber.grabbercore.controller.web.web.controller.IGTVGController;
 import org.thymeleaf.ITemplateEngine;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebFilter
-@Order(1)
-public class GTVGFilter implements Filter {
+//@Component
+//@WebFilter(
+//        urlPatterns = "/grabber/hospital/*",
+//        dispatcherTypes = {DispatcherType.REQUEST, DispatcherType.FORWARD},
+//        initParams = {})
+public class HospitalFilter implements Filter {
 
 
     private ServletContext servletContext;
     private GTVGApplication application;
 
 
-    public GTVGFilter() {
+    public HospitalFilter() {
         super();
     }
 
@@ -60,17 +61,12 @@ public class GTVGFilter implements Filter {
 
     public void doFilter(final ServletRequest request, final ServletResponse response,
                          final FilterChain chain) throws IOException, ServletException {
+        request.getDispatcherType();
         addUserToSession((HttpServletRequest) request);
         if (!process((HttpServletRequest) request, (HttpServletResponse) response)) {
             chain.doFilter(request, response);
         }
     }
-
-
-    public void destroy() {
-        // nothing to do
-    }
-
 
     private boolean process(HttpServletRequest request, HttpServletResponse response)
             throws ServletException {

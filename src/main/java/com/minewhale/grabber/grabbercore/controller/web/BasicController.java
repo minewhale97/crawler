@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.minewhale.grabber.grabbercore.demos.web;
+package com.minewhale.grabber.grabbercore.controller.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;

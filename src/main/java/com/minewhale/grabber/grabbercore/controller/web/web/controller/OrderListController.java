@@ -17,7 +17,7 @@
  * 
  * =============================================================================
  */
-package com.minewhale.grabber.grabbercore.web.controller;
+package com.minewhale.grabber.grabbercore.controller.web.web.controller;
 
 import com.minewhale.grabber.grabbercore.business.entities.Order;
 import com.minewhale.grabber.grabbercore.business.services.OrderService;

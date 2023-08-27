@@ -9,5 +9,5 @@ public interface GrabberConstant {
     Pattern PATTERN_BETWEEN_SINGLE_QUOTES = Pattern.compile(EXTRACT_BETWEEN_SINGLE_QUOTES);
 
 
-    String GRABBER_RESULTS = "grabberResultS";
+    String GRABBER_RESULTS = "grabberResults";
 }

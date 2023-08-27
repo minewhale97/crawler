@@ -17,9 +17,9 @@
  * 
  * =============================================================================
  */
-package com.minewhale.grabber.grabbercore.web.application;
+package com.minewhale.grabber.grabbercore.controller.web.web.application;
 
-import com.minewhale.grabber.grabbercore.web.controller.*;
+import com.minewhale.grabber.grabbercore.controller.web.web.controller.*;
 import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templatemode.TemplateMode;

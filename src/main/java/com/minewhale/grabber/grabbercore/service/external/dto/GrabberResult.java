@@ -1,10 +1,13 @@
 package com.minewhale.grabber.grabbercore.service.external.dto;
 
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class GrabberResult <T> {
     /**
      * 站点名称
@@ -24,5 +27,6 @@ public class GrabberResult <T> {
     /**
      * 元素
      */
+    @Singular
     private List<T> elements;
 }

@@ -28,10 +28,20 @@ public class JiangsuProvinceHospitalGrabber extends AbstractHospitalGrabber impl
 
     final static String HOSPITAL_NAME = "江苏省中医院";
 
+    private String date = null;
+
+    public JiangsuProvinceHospitalGrabber() {
+    }
+
+    public JiangsuProvinceHospitalGrabber(String date) {
+        this.date = date;
+    }
+
     @Override
     // process是定制爬虫逻辑的核心接口，在这里编写抽取逻辑
     public void process(Page page) {
-        String dateStr = DateUtils.getDateStr(LocalDateTime.now(ZoneId.of("+8")));
+        String dateStr = Objects.isNull(date)?
+                DateUtils.getDateStr(LocalDateTime.now(ZoneId.of("+8"))):date;
         // 部分二：定义如何抽取页面信息，并保存下来
         Selectable listPath = page.getHtml().xpath("//*[@class='llist']");
         String category = listPath.xpath("//dt//font//text()").get();
